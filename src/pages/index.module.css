@@ -1,0 +1,7 @@
+.logoContainer {
+  @apply absolute px-5 py-1 flex w-1/4 left-1/2 top-10 rounded-md;
+  border: 1px solid theme("colors.border1");
+  transform: translateX(-50%);
+  box-shadow: theme("colors.shadow1");
+  background-color: theme("colors.background1");
+}
