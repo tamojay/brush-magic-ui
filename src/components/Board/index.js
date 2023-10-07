@@ -6,9 +6,8 @@ import { actionItemClick } from "@/slice/menuSlice";
 
 import { socket } from "@/socket";
 
-const Board = () => {
+const Board = ({ canvasRef }) => {
   const dispatch = useDispatch();
-  const canvasRef = useRef(null);
   const drawHistory = useRef([]);
   const historyPointer = useRef(0);
   const shouldDraw = useRef(false);
@@ -135,7 +134,11 @@ const Board = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef}></canvas>;
+  return (
+    <div>
+      <canvas ref={canvasRef}></canvas>
+    </div>
+  );
 };
 
 export default Board;

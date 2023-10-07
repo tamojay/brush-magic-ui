@@ -15,6 +15,8 @@ const initialState = {
   actionMenuItem: null,
   canvasBackgroundColor: backgroundColors[0], // Initialize with the default color (white)
   backgroundColorIndex: 0, // Initialize the index to 0
+  drawHistory: [], // Store draw history
+  historyPointer: 0, // Track draw history pointer
 };
 
 export const menuSlice = createSlice({
@@ -34,8 +36,8 @@ export const menuSlice = createSlice({
         backgroundColors[state.backgroundColorIndex];
     },
     clearCanvas: (state) => {
-      // Clear the canvas by changing the background color to the desired default background color
-      state.backgroundColorIndex = 0; // Reset to the default background color
+      state.drawHistory = []; // Clear the draw history
+      state.historyPointer = 0; // Reset the draw history pointer
     },
   },
 });
